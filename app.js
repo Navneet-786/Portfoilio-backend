@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://portfolio-frontend.vercel.app", process.env.DASHBOARD_URL],
+    origin: [process.env.PORTFOLIO_URL, process.env.DASHBOARD_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
