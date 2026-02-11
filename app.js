@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.PORTFOLIO_URL, process.env.DASHBOARD_URL],
+    origin: ["https://portfolio-frontend.vercel.app", process.env.DASHBOARD_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -43,7 +43,7 @@ app.use("/api/v1/skill", skillRouter);
 app.use("/api/v1/softwareapplication", softwareApplicationRouter);
 app.use("/api/v1/project", projectRouter);
 
-dbConnection();
 app.use(errorMiddleware);
+await dbConnection();
 
 export default app;
