@@ -32,7 +32,10 @@ app.use(
     tempFileDir: "/tmp/",
   })
 );
-
+app.get("/", (req, res) => {
+  return res.send("Hello World")
+}
+)
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/timeline", timelineRouter);
 app.use("/api/v1/message", messageRouter);
